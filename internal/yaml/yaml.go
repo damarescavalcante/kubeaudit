@@ -7,7 +7,6 @@ import (
 	log "github.com/sirupsen/logrus"
 	goyaml "gopkg.in/yaml.v3"
 
-	"github.com/ghodss/yaml"
     "github.com/sergi/go-diff/diffmatchpatch"
     "strings"
 )
