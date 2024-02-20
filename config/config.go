@@ -4,12 +4,12 @@ import (
 	"io"
 	"io/ioutil"
 
-	"github.com/Shopify/kubeaudit/auditors/deprecatedapis"
-	"github.com/Shopify/kubeaudit/auditors/mounts"
+	"github.com/damarescavalcante/kubeaudit/auditors/deprecatedapis"
+	"github.com/damarescavalcante/kubeaudit/auditors/mounts"
 
-	"github.com/Shopify/kubeaudit/auditors/capabilities"
-	"github.com/Shopify/kubeaudit/auditors/image"
-	"github.com/Shopify/kubeaudit/auditors/limits"
+	"github.com/damarescavalcante/kubeaudit/auditors/capabilities"
+	"github.com/damarescavalcante/kubeaudit/auditors/image"
+	"github.com/damarescavalcante/kubeaudit/auditors/limits"
 	"gopkg.in/yaml.v3"
 )
 

@@ -4,9 +4,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/Shopify/kubeaudit/internal/k8sinternal"
-	"github.com/Shopify/kubeaudit/internal/test"
-	"github.com/Shopify/kubeaudit/pkg/k8s"
+	"github.com/damarescavalcante/kubeaudit/internal/k8sinternal"
+	"github.com/damarescavalcante/kubeaudit/internal/test"
+	"github.com/damarescavalcante/kubeaudit/pkg/k8s"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"

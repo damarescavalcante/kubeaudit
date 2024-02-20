@@ -3,8 +3,8 @@ package privileged
 import (
 	"testing"
 
-	"github.com/Shopify/kubeaudit/internal/test"
-	"github.com/Shopify/kubeaudit/pkg/k8s"
+	"github.com/damarescavalcante/kubeaudit/internal/test"
+	"github.com/damarescavalcante/kubeaudit/pkg/k8s"
 	"github.com/stretchr/testify/assert"
 )
 

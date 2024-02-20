@@ -1,4 +1,4 @@
-module github.com/Shopify/kubeaudit
+module github.com/damarescavalcante/kubeaudit
 
 require (
 	github.com/jetstack/cert-manager v1.6.1

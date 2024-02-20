@@ -4,8 +4,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/Shopify/kubeaudit/auditors/all"
-	"github.com/Shopify/kubeaudit/internal/yaml"
+	"github.com/damarescavalcante/kubeaudit/auditors/all"
+	"github.com/damarescavalcante/kubeaudit/internal/yaml"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )

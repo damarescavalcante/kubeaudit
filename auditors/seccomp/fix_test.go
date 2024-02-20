@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Shopify/kubeaudit/internal/test"
-	"github.com/Shopify/kubeaudit/pkg/k8s"
+	"github.com/damarescavalcante/kubeaudit/internal/test"
+	"github.com/damarescavalcante/kubeaudit/pkg/k8s"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	apiv1 "k8s.io/api/core/v1"

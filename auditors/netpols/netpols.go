@@ -3,9 +3,9 @@ package netpols
 import (
 	"fmt"
 
-	"github.com/Shopify/kubeaudit"
-	"github.com/Shopify/kubeaudit/pkg/k8s"
-	"github.com/Shopify/kubeaudit/pkg/override"
+	"github.com/damarescavalcante/kubeaudit"
+	"github.com/damarescavalcante/kubeaudit/pkg/k8s"
+	"github.com/damarescavalcante/kubeaudit/pkg/override"
 )
 
 const Name = "netpols"

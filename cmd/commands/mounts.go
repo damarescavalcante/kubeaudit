@@ -3,7 +3,7 @@ package commands
 import (
 	"bytes"
 	"fmt"
-	"github.com/Shopify/kubeaudit/auditors/mounts"
+	"github.com/damarescavalcante/kubeaudit/auditors/mounts"
 	"github.com/spf13/cobra"
 	"strings"
 )
