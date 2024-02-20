@@ -6,6 +6,10 @@ import (
 
 	log "github.com/sirupsen/logrus"
 	goyaml "gopkg.in/yaml.v3"
+
+	"github.com/ghodss/yaml"
+    "github.com/sergi/go-diff/diffmatchpatch"
+    "strings"
 )
 
 // src https://github.com/go-yaml/yaml/blob/v3/resolve.go#L70
@@ -36,6 +40,34 @@ func Merge(origData, fixedData []byte) ([]byte, error) {
 
 	return marshal(mergedYaml)
 }
+
+//Adicionei as novas funções aqui
+// DiffBytes realiza o diff entre dois conjuntos de bytes YAML e retorna o diff como uma string.
+func DiffBytes(data1, data2 []byte) (string, error) {
+    str1 := string(data1)
+    str2 := string(data2)
+    return DiffStrings(str1, str2)
+}
+
+// DiffStrings realiza o diff entre duas strings YAML e retorna o diff como uma string.
+func DiffStrings(str1, str2 string) (string, error) {
+    diffs := diffmatchpatch.New().DiffMain(str1, str2, true)
+    diffText := diffmatchpatch.New().DiffPrettyText(diffs)
+
+    // Adiciona prefixos aos trechos de diff para indicar "linha antiga" e "nova linha"
+    lines := strings.Split(diffText, "\n")
+    for i, line := range lines {
+        if strings.HasPrefix(line, "-") {
+            lines[i] = "linha antiga - " + line
+        } else if strings.HasPrefix(line, "+") {
+            lines[i] = "nova linha - " + line
+        }
+    }
+
+    return strings.Join(lines, "\n"), nil
+}
+//Fim das novas funções 
+
 
 func unmarshal(data []byte) (*goyaml.Node, error) {
 	var node goyaml.Node

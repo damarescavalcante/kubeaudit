@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/Shopify/kubeaudit/auditors/all"
-	"github.com/Shopify/kubeaudit/internal/yaml"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
@@ -29,57 +28,21 @@ func autofix(cmd *cobra.Command, args []string) {
 	report := getReport(auditors...)
 
 	var f io.Writer
-	var diffFile *os.File
 	if autofixConfig.outFile != "" {
 		f, err = os.Create(autofixConfig.outFile)
 		if err != nil {
 			log.WithError(err).Fatal("Error opening out file")
-		}
-
-		// Open diff file
-		diffFile, err = os.Create(autofixConfig.outFile + ".diff")
-		if err != nil {
-			log.WithError(err).Fatal("Error opening diff file")
 		}
 	} else {
 		f, err = os.OpenFile(rootConfig.manifest, os.O_WRONLY|os.O_TRUNC, 0755)
 		if err != nil {
 			log.WithError(err).Fatal("Error opening manifest file")
 		}
-
-		// Open diff file
-		diffFile, err = os.Create(rootConfig.manifest + ".diff")
-		if err != nil {
-			log.WithError(err).Fatal("Error opening diff file")
-		}
-	}
-
-	// Create diff between original and fixed manifest
-	originalManifest, err := ioutil.ReadFile(rootConfig.manifest)
-	if err != nil {
-		log.WithError(err).Fatal("Error reading original manifest")
 	}
 
 	err = report.Fix(f)
 	if err != nil {
 		log.WithError(err).Fatal("Error fixing manifest")
-	}
-
-	fixedManifest, err := ioutil.ReadFile(autofixConfig.outFile)
-	if err != nil {
-		log.WithError(err).Fatal("Error reading fixed manifest")
-	}
-
-	// Calculate diff between original and fixed manifest
-	diff, err := yaml.DiffBytes(originalManifest, fixedManifest)
-	if err != nil {
-		log.WithError(err).Fatal("Error calculating diff")
-	}
-
-	// Write diff to diff file
-	_, err = diffFile.WriteString(diff)
-	if err != nil {
-		log.WithError(err).Fatal("Error writing diff to file")
 	}
 }
 
