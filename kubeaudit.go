@@ -17,19 +17,19 @@
 // First initialize the security auditors
 //
 // The auditors determine which security issues kubeaudit will look for. Each auditor is responsible for a different
-// security issue. For an explanation of what each auditor checks for, see https://github.com/damarescavalcante/kubeaudit#auditors.
+// security issue. For an explanation of what each auditor checks for, see https://github.com/Shopify/kubeaudit#auditors.
 //
 // To initialize all available auditors:
 //
-//   import "github.com/damarescavalcante/kubeaudit/auditors/all"
+//   import "github.com/Shopify/kubeaudit/auditors/all"
 //
 //   auditors, err := all.Auditors(config.KubeauditConfig{})
 //
 // Or, to initialize specific auditors, import each one:
 //
 //   import (
-//     "github.com/damarescavalcante/kubeaudit/auditors/apparmor"
-//     "github.com/damarescavalcante/kubeaudit/auditors/image"
+//     "github.com/Shopify/kubeaudit/auditors/apparmor"
+//     "github.com/Shopify/kubeaudit/auditors/image"
 //   )
 //
 //   auditors := []kubeaudit.Auditable{
@@ -95,7 +95,7 @@
 // Override Errors
 //
 // Overrides can be used to ignore specific auditors for specific containers or pods.
-// See the documentation for the specific auditor you wish to override at https://github.com/damarescavalcante/kubeaudit#auditors.
+// See the documentation for the specific auditor you wish to override at https://github.com/Shopify/kubeaudit#auditors.
 //
 // Custom Auditors
 //
@@ -111,8 +111,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/damarescavalcante/kubeaudit/internal/k8sinternal"
-	"github.com/damarescavalcante/kubeaudit/pkg/k8s"
+	"github.com/Shopify/kubeaudit/internal/k8sinternal"
+	"github.com/Shopify/kubeaudit/pkg/k8s"
 )
 
 // Kubeaudit provides functions to audit and fix Kubernetes manifests

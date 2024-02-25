@@ -4,8 +4,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/damarescavalcante/kubeaudit/auditors/all"
-	"github.com/damarescavalcante/kubeaudit/internal/yaml"
+	"github.com/Shopify/kubeaudit/auditors/all"
+	"github.com/Shopify/kubeaudit/internal/yaml"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
@@ -17,17 +17,13 @@ var autofixConfig struct {
 
 func autofix(cmd *cobra.Command, args []string) {
 	conf := loadKubeAuditConfigFromFile(autofixConfig.kubeauditConfigFile)
-
 	conf = setConfigFromFlags(cmd, conf)
-
 	auditors, err := all.Auditors(conf)
-
 	if err != nil {
 		log.WithError(err).Fatal("Error creating auditors")
 	}
 
 	report := getReport(auditors...)
-
 	var f io.Writer
 	var diffFile *os.File
 	if autofixConfig.outFile != "" {
@@ -55,7 +51,7 @@ func autofix(cmd *cobra.Command, args []string) {
 	}
 
 	// Create diff between original and fixed manifest
-	originalManifest, err := ioutil.ReadFile(rootConfig.manifest)
+	originalManifest, err := os.ReadFile(rootConfig.manifest)
 	if err != nil {
 		log.WithError(err).Fatal("Error reading original manifest")
 	}
@@ -65,7 +61,7 @@ func autofix(cmd *cobra.Command, args []string) {
 		log.WithError(err).Fatal("Error fixing manifest")
 	}
 
-	fixedManifest, err := ioutil.ReadFile(autofixConfig.outFile)
+	fixedManifest, err := os.ReadFile(autofixConfig.outFile)
 	if err != nil {
 		log.WithError(err).Fatal("Error reading fixed manifest")
 	}

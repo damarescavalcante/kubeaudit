@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/damarescavalcante/kubeaudit/internal/test"
+	"github.com/Shopify/kubeaudit/internal/test"
 )
 
 func TestAuditSeccomp(t *testing.T) {

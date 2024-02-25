@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"github.com/damarescavalcante/kubeaudit/auditors/apparmor"
+	"github.com/Shopify/kubeaudit/auditors/apparmor"
 	"github.com/spf13/cobra"
 )
 

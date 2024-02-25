@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/damarescavalcante/kubeaudit"
-	"github.com/damarescavalcante/kubeaudit/pkg/k8s"
+	"github.com/Shopify/kubeaudit"
+	"github.com/Shopify/kubeaudit/pkg/k8s"
 
 	log "github.com/sirupsen/logrus"
 )

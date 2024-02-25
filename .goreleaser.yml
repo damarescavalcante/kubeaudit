@@ -25,7 +25,7 @@ builds:
   main: ./cmd/main.go
   binary: kubeaudit
   ldflags:
-  - -s -w -X github.com/damarescavalcante/kubeaudit/cmd.Version={{.Version}} -X github.com/damarescavalcante/kubeaudit/cmd.Commit={{.Commit}} -X github.com/damarescavalcante/kubeaudit/cmd.BuildDate={{.Date}}
+  - -s -w -X github.com/Shopify/kubeaudit/cmd.Version={{.Version}} -X github.com/Shopify/kubeaudit/cmd.Commit={{.Commit}} -X github.com/Shopify/kubeaudit/cmd.BuildDate={{.Date}}
 
 changelog:
   sort: asc

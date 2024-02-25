@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/damarescavalcante/kubeaudit"
-	"github.com/damarescavalcante/kubeaudit/pkg/fix"
-	"github.com/damarescavalcante/kubeaudit/pkg/k8s"
+	"github.com/Shopify/kubeaudit"
+	"github.com/Shopify/kubeaudit/pkg/fix"
+	"github.com/Shopify/kubeaudit/pkg/k8s"
 	apiv1 "k8s.io/api/core/v1"
 )
 

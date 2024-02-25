@@ -3,7 +3,7 @@ package seccomp
 import (
 	"fmt"
 
-	"github.com/damarescavalcante/kubeaudit/pkg/k8s"
+	"github.com/Shopify/kubeaudit/pkg/k8s"
 	apiv1 "k8s.io/api/core/v1"
 )
 

@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/damarescavalcante/kubeaudit/internal/test"
+	"github.com/Shopify/kubeaudit/internal/test"
 	"github.com/stretchr/testify/assert"
 )
 

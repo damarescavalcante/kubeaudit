@@ -3,7 +3,7 @@ package commands
 import (
 	"fmt"
 
-	"github.com/damarescavalcante/kubeaudit/auditors/capabilities"
+	"github.com/Shopify/kubeaudit/auditors/capabilities"
 	"github.com/spf13/cobra"
 )
 

@@ -3,8 +3,8 @@ package override
 import (
 	"strings"
 
-	"github.com/damarescavalcante/kubeaudit"
-	"github.com/damarescavalcante/kubeaudit/pkg/k8s"
+	"github.com/Shopify/kubeaudit"
+	"github.com/Shopify/kubeaudit/pkg/k8s"
 )
 
 const (

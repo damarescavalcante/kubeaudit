@@ -5,11 +5,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/damarescavalcante/kubeaudit"
-	"github.com/damarescavalcante/kubeaudit/auditors/all"
-	"github.com/damarescavalcante/kubeaudit/auditors/apparmor"
-	"github.com/damarescavalcante/kubeaudit/auditors/image"
-	"github.com/damarescavalcante/kubeaudit/config"
+	"github.com/Shopify/kubeaudit"
+	"github.com/Shopify/kubeaudit/auditors/all"
+	"github.com/Shopify/kubeaudit/auditors/apparmor"
+	"github.com/Shopify/kubeaudit/auditors/image"
+	"github.com/Shopify/kubeaudit/config"
 
 	"github.com/sirupsen/logrus"
 	log "github.com/sirupsen/logrus"

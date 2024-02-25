@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/damarescavalcante/kubeaudit"
-	"github.com/damarescavalcante/kubeaudit/auditors/all"
-	"github.com/damarescavalcante/kubeaudit/config"
-	"github.com/damarescavalcante/kubeaudit/internal/test"
+	"github.com/Shopify/kubeaudit"
+	"github.com/Shopify/kubeaudit/auditors/all"
+	"github.com/Shopify/kubeaudit/config"
+	"github.com/Shopify/kubeaudit/internal/test"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

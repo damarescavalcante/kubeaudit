@@ -1,4 +1,5 @@
 /kubeaudit
+/kubeaudit2
 /kubeaudit_unix
 /tmp
 /.glide
@@ -11,3 +12,4 @@ coverage.txt
 /.vscode
 .go-version
 profile.out
+kubeaudit-linux-amd64.tar.gz

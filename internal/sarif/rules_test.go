@@ -3,7 +3,7 @@ package sarif
 import (
 	"testing"
 
-	"github.com/damarescavalcante/kubeaudit/auditors/all"
+	"github.com/Shopify/kubeaudit/auditors/all"
 	"github.com/stretchr/testify/assert"
 )
 

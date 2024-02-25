@@ -3,9 +3,9 @@ package mounts
 import (
 	"fmt"
 
-	"github.com/damarescavalcante/kubeaudit"
-	"github.com/damarescavalcante/kubeaudit/pkg/k8s"
-	"github.com/damarescavalcante/kubeaudit/pkg/override"
+	"github.com/Shopify/kubeaudit"
+	"github.com/Shopify/kubeaudit/pkg/k8s"
+	"github.com/Shopify/kubeaudit/pkg/override"
 	v1 "k8s.io/api/core/v1"
 )
 
