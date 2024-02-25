@@ -59,9 +59,9 @@ func DiffStrings(str1, str2 string) (string, error) {
 	for _, diff := range diffs {
 		switch diff.Type {
 		case diffmatchpatch.DiffDelete:
-			diffText.WriteString("------------ DELETE ------------" + "\n")
+			diffText.WriteString("------------ Removed on ------------" + "\n")
 		case diffmatchpatch.DiffInsert:
-			diffText.WriteString("------------ INSERT ------------" + "\n")
+			diffText.WriteString("------------ Inserted on ------------" + "\n")
 		case diffmatchpatch.DiffEqual:
 			continue // Ignora diffs iguais
 		}
