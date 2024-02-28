@@ -3,7 +3,6 @@ package commands
 import (
 	"io"
 	"os"
-
 	"github.com/Shopify/kubeaudit/auditors/all"
 	"github.com/Shopify/kubeaudit/internal/yaml"
 	log "github.com/sirupsen/logrus"
@@ -31,7 +30,6 @@ func autofix(cmd *cobra.Command, args []string) {
 		if err != nil {
 			log.WithError(err).Fatal("Error opening out file")
 		}
-
 		// Open diff file
 		diffFile, err = os.Create(autofixConfig.outFile + ".diff")
 		if err != nil {
@@ -42,7 +40,6 @@ func autofix(cmd *cobra.Command, args []string) {
 		if err != nil {
 			log.WithError(err).Fatal("Error opening manifest file")
 		}
-
 		// Open diff file
 		diffFile, err = os.Create(rootConfig.manifest + ".diff")
 		if err != nil {
@@ -67,7 +64,7 @@ func autofix(cmd *cobra.Command, args []string) {
 	}
 
 	// Calculate diff between original and fixed manifest
-	diff, err := yaml.DiffBytes(originalManifest, fixedManifest)
+	diff, err := yaml.DiffBytes(originalManifest, fixedManifest,rootConfig.manifest,autofixConfig.outFile)
 	if err != nil {
 		log.WithError(err).Fatal("Error calculating diff")
 	}
